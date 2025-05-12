@@ -1,0 +1,19 @@
+# clusters/my-cluster/apps/messaging/mongodb-release.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mongodb
+  namespace: messaging
+spec:
+  chart:
+    spec:
+      chart: mongodb
+      version: 13.x.x
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 5m
+  values:
+    auth:
+      enabled: false

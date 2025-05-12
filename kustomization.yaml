@@ -1,0 +1,3 @@
+# clusters/my-cluster/kustomization.yaml
+resources:
+  - apps/messaging/
